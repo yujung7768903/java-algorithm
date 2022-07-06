@@ -1,6 +1,4 @@
-package dfs;
-
-import java.util.ArrayList;
+package dfsAndBfs;
 
 public class exDfs {
     public static boolean[] visited = new boolean[9];

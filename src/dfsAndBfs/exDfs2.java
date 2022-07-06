@@ -1,4 +1,4 @@
-package dfs;
+package dfsAndBfs;
 
 import java.util.ArrayList;
 import java.util.Collections;
