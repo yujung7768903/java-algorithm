@@ -1,5 +1,5 @@
 // 2021 Dev-Matching 웹 백엔드 (상반기) - 행렬 테두리 회전하기
-// 테스트 코드 1번만 성공
+// 테스트 코드 1번만 성공 : minNum = (tmp < minNum) ? tmp : minNum; <- 이 줄이 빠진 게 원인이었음
 
 package sampleQuestions.devMatching2021;
 
@@ -71,12 +71,14 @@ public class two {
         }
         for (int c = endY; c > startY; c--) { // 아래
             tmp = map[endX][c];
+            minNum = (tmp < minNum) ? tmp : minNum;
             map[endX][c] = presentNum;
             presentNum = tmp;
             System.out.println("presentNum: " + presentNum);
         }
         for (int d = endX; d > startX; d--) { // 왼쪽
             tmp = map[d][startY];
+            minNum = (tmp < minNum) ? tmp : minNum;
             map[d][startY] = presentNum;
             presentNum = tmp;
             System.out.println("presentNum: " + presentNum);
