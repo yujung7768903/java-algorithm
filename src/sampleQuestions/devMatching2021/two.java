@@ -51,7 +51,7 @@ public class two {
         System.out.println("startX: " + startX + ", startY: " + startY + ", endX: " + endX + ", endY: " + endY);
 
         int minNum = map[startX + 1][startY];
-        int presentNum = map[startX + 1][startY]; // 이동할 숫자
+        int presentNum = minNum; // 이동할 숫자
         System.out.println("presentNum: " + presentNum);
 
         int tmp;
