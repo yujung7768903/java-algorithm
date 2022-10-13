@@ -32,13 +32,11 @@ public class calculateParkingFee2 {
                 int parkingTime = calParkingTime(tempMap.get(carNum), time);
                 int totalTime = (totalTimeMap.get(carNum) == null) ? parkingTime : totalTimeMap.get(carNum) + parkingTime;
                 totalTimeMap.put(carNum, totalTime);
-                System.out.println("최종 누적시간: " + totalTimeMap.get(carNum));
                 tempMap.remove(carNum);
             } else { // 입차시 tempMap에 저장
                 tempMap.put(carNum, time);
                 System.out.println(tempMap.get(carNum).toString());
             }
-            System.out.println("============================");
         }
 
         // 입차만 있고 출차 기록이 없다면, 11:59분 추가
