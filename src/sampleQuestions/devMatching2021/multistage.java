@@ -14,17 +14,8 @@ public class multistage {
 
     public static int[] solution(String[] enroll, String[] referral, String[] seller, int[] amount) {
         int[] answer = new int[enroll.length];
-        Queue<String> queue = new LinkedList<>(); // 수익을 계산해야하는 사람들
         Map<String, Integer> sellResultMap = new HashMap<>(); // {key: 판매자, value: 누적 수익}
         Map<String, String> referralMap = new HashMap<>();
-
-        for (int i = 0; i < enroll.length; i++) {
-            referralMap.put(enroll[i], referral[i]);
-            sellResultMap.put(enroll[i], 0);
-            if (!Arrays.asList(enroll).contains(enroll[i])) {
-                queue.add(enroll[i]);
-            }
-        }
 
         for (int j = 0; j < seller.length; j++) {
             String sellerName = seller[j];
