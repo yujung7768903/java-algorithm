@@ -35,7 +35,6 @@ public class multistage {
                 System.out.println("(37)판매자: " + sellerName + ", 누적 수익금: " + sellResultMap.get(sellerName));
             }
             System.out.println("✨중간점검 ✨: " + sellResultMap.toString());
-            System.out.println("✨중간점검 ✨: " + referralMap.toString());
             System.out.println("====================");
         }
         for (int k = 0; k < enroll.length; k++) {
@@ -46,9 +45,12 @@ public class multistage {
     }
 
     /*
+    * Parameters
+    *   money: 판매 금액 or 배분받은 금액
+    *   profit: 현재까지 누적 수익
     * Returns: {누적 수익, 배분금}
     * */
-    public static int[] divideProfit(int money, int profit) { // 판매자 이름, 판매 금액 or 배분받은 금액, 현재까지 누적 수익
+    public static int[] divideProfit(int money, int profit) { // 판매 금액 or 배분받은 금액, 현재까지 누적 수익
         System.out.println("money: " + money + ", profit: " + profit);
         if (money >= 10) {
             int allotment = (int) (money * 0.1); // 배분금
