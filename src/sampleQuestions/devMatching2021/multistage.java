@@ -14,8 +14,8 @@ public class multistage {
 
     public static int[] solution(String[] enroll, String[] referral, String[] seller, int[] amount) {
         int[] answer = new int[enroll.length];
-        Map<String, Integer> sellResultMap = new HashMap<>(); // {key: 판매자, value: 누적 수익}
-        Map<String, String> referralMap = new HashMap<>();
+        Map<String, Integer> sellResultMap = new HashMap<>(); // key: 판매자, value: 누적 수익 | ex: {young=90, mary=1, tod=0, edward=9, john=0, emily=0, sam=0, jaimie=0}
+        Map<String, String> referralMap = new HashMap<>(); // key: 판매자, value: 추천인 | ex: {young=edward, mary=-, tod=jaimie, edward=mary, john=-, emily=mary, sam=edward, jaimie=mary}
 
         for (int i = 0; i < enroll.length; i++) {
             referralMap.put(enroll[i], referral[i]);
@@ -35,6 +35,7 @@ public class multistage {
                 System.out.println("(37)판매자: " + sellerName + ", 누적 수익금: " + sellResultMap.get(sellerName));
             }
             System.out.println("✨중간점검 ✨: " + sellResultMap.toString());
+            System.out.println("✨중간점검 ✨: " + referralMap.toString());
             System.out.println("====================");
         }
         for (int k = 0; k < enroll.length; k++) {
