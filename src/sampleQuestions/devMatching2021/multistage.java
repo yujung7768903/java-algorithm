@@ -17,6 +17,11 @@ public class multistage {
         Map<String, Integer> sellResultMap = new HashMap<>(); // {key: 판매자, value: 누적 수익}
         Map<String, String> referralMap = new HashMap<>();
 
+        for (int i = 0; i < enroll.length; i++) {
+            referralMap.put(enroll[i], referral[i]);
+            sellResultMap.put(enroll[i], 0);
+        }
+
         for (int j = 0; j < seller.length; j++) {
             String sellerName = seller[j];
             int[] dividedProfit = divideProfit(amount[j] * 100, sellResultMap.get(sellerName));
