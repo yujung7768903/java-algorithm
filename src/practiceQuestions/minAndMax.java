@@ -1,38 +1,21 @@
 package practiceQuestions;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
+import common.ExecutionTime;
+
 import java.util.Arrays;
 
 public class minAndMax {
 
     public static void main(String[] args) {
-        LocalDateTime before = LocalDateTime.now();
-        System.out.println("before time: " + before);
+        ExecutionTime executionTime = new ExecutionTime();
         System.out.println(solution("1 2 3 4"));
-        LocalDateTime after = LocalDateTime.now();
-        System.out.println("after time: " + after);
-        System.out.println("total time: " + ChronoUnit.SECONDS.between(before, after) + "s");
-        System.out.println("total time: " + ChronoUnit.MILLIS.between(before, after) + "ms");
-        System.out.println("total time: " + ChronoUnit.MICROS.between(before, after) + "µs");
-        System.out.println("==========================");
-        before = LocalDateTime.now();
-        System.out.println("before time: " + before);
+        executionTime.measure();
+        executionTime = new ExecutionTime();
         System.out.println(solution2("1 2 3 4"));
-        after = LocalDateTime.now();
-        System.out.println("after time: " + after);
-        System.out.println("total time: " + ChronoUnit.SECONDS.between(before, after) + "s");
-        System.out.println("total time: " + ChronoUnit.MILLIS.between(before, after) + "ms");
-        System.out.println("total time: " + ChronoUnit.MICROS.between(before, after) + "µs");
-        System.out.println("==========================");
-        before = LocalDateTime.now();
-        System.out.println("before time: " + before);
+        executionTime.measure();
+        executionTime = new ExecutionTime();
         System.out.println(solution3("1 2 3 4"));
-        after = LocalDateTime.now();
-        System.out.println("after time: " + after);
-        System.out.println("total time: " + ChronoUnit.SECONDS.between(before, after) + "s");
-        System.out.println("total time: " + ChronoUnit.MILLIS.between(before, after) + "ms");
-        System.out.println("total time: " + ChronoUnit.MICROS.between(before, after) + "µs");
+        executionTime.measure();
     }
 
     // 방법1: stream 활용. 소요 시간: 30ms(22774µs)
