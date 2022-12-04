@@ -1,4 +1,4 @@
-package common;
+package practiceQuestions;
 
 public class numExpression {
     public static int answer = 0;
